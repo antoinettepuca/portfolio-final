@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Space+Mono&display=swap');
+body {
+    background-color: lightgray;
+    background-image: url('../images/backgroundimage.jpg');
+    font-family: 'Source Sans Pro', 'Trebuchet MS', Arial;
+    color: black;
+}
+.navigation_links {
+    display: flex;
+    flex-direction: column;
+    border: solid #013179 3px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.navigation_links a:link {
+    text-decoration: none;
+}
+
+.navigation_links a, a:visited, .skip, .skip:visited{
+    color: #013179;
+}
+nav li {
+    display: inline;
+    color: #013179;
+    padding: 5px;
+    margin: 2px;
+}
+.active {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: solid #702963 3px;
+    text-decoration: none;
+}
+
+a.skip{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #702963;
+
+    -webkit-transition: top 1s ease-out;
+    transition: left 1s ease-out;
+    z-index: 1;
+
+    position: absolute;
+    left: -500px;
+    text-decoration: none;
+    border: solid #013179 3px;
+    padding: 1px;
+}
+
+a.focus{
+    outline: none;
+}
+
+h1, h2, #caption{
+    text-align: center;    
+}
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 5%;
+    margin-bottom: 0;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+}
+p, li {
+    font-size: 16px;
+}
+#caption {
+    font-size: 12px;
+}
+h2, p, li, h3 {
+    padding: 1%;
+}
+footer {
+    text-align: center;
+    background: #013179;
+    color: white;
+    font-size: 18px;
+}
+
+img{
+    padding: 2px;
+    border: #013179 solid 3px;
+    width: 200px;
+    display: inline-block;
+}
+
+.cooking_images {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2%;
+}
+
+.baking_images, .animation, .freezer, embed {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+embed {
+    height: 250px;
+    width: 90%;
+}
+
+.container, form {
+    border: #013179 solid 3px;
+    padding: 2%;
+    margin: 5%;
+    margin-top: 2%;
+}
+
+form{
+    text-align: center;
+    background-color: #cbc1e1;
+    margin: 0 auto;
+    width: 88%;
+    margin-bottom: 4%;
+}
+
+label {
+    display: block;
+}
+
+#icon{
+    color: white;
+    width: 50px;
+    margin-bottom: 1%;
+    padding: 1px;
+}
+
+#icon:hover{
+    opacity: 50%;
+}
+
+.freezer {
+    background-color: lightgray;
+    background-image: url('../images/freezer.JPG');
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.freezer > img {
+    display: none;
+}
+
+.flip-card, .flip-card-2, .flip-card-3 {
+    width: auto;
+}
+.flip-card-inner, .flip-card-inner-2, .flip-card-inner-3 {
+    position: relative;
+    left: auto;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner, .flip-card-2:hover .flip-card-inner-2, .flip-card-3:hover .flip-card-inner-3, .flip-card:focus-within .flip-card-inner, .flip-card-2:focus-within .flip-card-inner-2, .flip-card-3:focus-within .flip-card-inner-3 {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back, .flip-card-front-2, .flip-card-back-2, .flip-card-front-3, .flip-card-back-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back, .flip-card-back-2, .flip-card-back-3 {
+    transform: rotateY(180deg);
+}
+
+#tony, #debbie {
+    margin-top: 275px;
+}
+
+#flip {
+    padding-bottom: 250px;
+}
+
+@keyframes bouncing {
+    0% {transform: translateY(0);}
+    100% {transform: translatey(-10px);}
+}
+
+.animation {
+    animation: bouncing 0.8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    margin-top: 5px;
+}
+
+
+@media screen and (prefers-reduced-motion: reduce){
+    .animation {
+        animation: none;
+    }
+    .freezer{
+        background-attachment: initial;
+    }
+    a.skip {
+        -webkit-transition: initial;
+        transition: initial;
+    }
+
+    .flip-card-inner, .flip-card-inner-2, .flip-card-inner-3 {
+        transform-style: initial;
+    }
+    .flip-card:hover .flip-card-inner, .flip-card-2:hover .flip-card-inner-2, .flip-card-3:hover .flip-card-inner-3, .flip-card:focus-within .flip-card-inner, .flip-card-2:focus-within .flip-card-inner-2, .flip-card-3:focus-within .flip-card-inner-3 {
+        transform: none;  
+    }
+    
+    #tony, #debbie {
+        margin-top: 275px;
+    }
+    #flip {
+        padding-bottom: 175px;
+    }
+}
+
+@media screen and (min-width: 750px){
+    a.skip:focus{
+        left: 10px;
+    }
+
+    .navigation_links {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        top: 40px;
+    }
+    .active{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .baking_images{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        justify-content: space-around;
+        align-items: center;
+        gap: 2%;
+    }
+    #orange_loaf{
+        grid-column: 1/span 1;
+        grid-row: 1/span 1;
+    }
+    #banana_bread{
+        grid-column: 1/span 1;
+        grid-row: 2/span 1;
+    }
+    #focaccia {
+        grid-column: 2/span 1;
+        grid-row: 1/span 2;
+    }
+
+    #lemon_cake {
+        grid-column: 1/span 1;
+        grid-row: 1/span 2;
+    }
+    #lemon_cake img {
+        width: auto;
+        min-height: 200px;
+    }
+
+    #black_forest {
+        grid-column: 2/span 1;
+        grid-row: 1/span 2;
+    }
+
+    #biscotti {
+        grid-column: 1/span 2;
+        grid-row: 1/span 1;
+        margin: 0 auto;
+    }
+    #biscotti img {
+        min-width: 300px;
+    }
+    #cookies {
+        grid-column: 1/span 1;
+        grid-row: 2/span 1; 
+    }
+    #brownies {
+        grid-column: 2/span 1;
+        grid-row: 2/span 1;
+    }
+
+    #crepe {
+        grid-column: 1/span 1;
+        grid-row: 1/span 2;
+    }
+
+    #shakshuka {
+        grid-column: 2/span 1;
+        grid-row: 1/span 2;
+    }
+
+    .cooking_images {
+        flex-direction: row;
+    }
+
+    .cooking_images > img {
+        margin: 0.5em 0;
+    }
+
+
+
+}
+
+@media screen and (min-width: 900px){
+
+    a.skip:focus{
+        left: 20px;
+    }
+    .navigation_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        top: 40px;
+        
+    }
+    .active{
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+    .baking_images{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        justify-content: space-around;
+        align-items: start;
+        gap: 2%;
+    }
+
+    #orange_loaf{
+        grid-column: 1/span 1;
+        grid-row: 1/span 2;
+    }
+    #banana_bread{
+        grid-column: 2/span 1;
+        grid-row: 2/span 2;
+    }
+    #focaccia {
+        grid-column: 3/span 1;
+        grid-row: 1/span 3;
+    }
+
+    #lemon_cake {
+        grid-column: 1/span 2;
+        grid-row: 1/span 3;
+    }
+    #lemon_cake img{
+        width: auto;
+        min-height: 200px;
+    }
+
+    #black_forest {
+        grid-column: 3/span 1;
+        grid-row: 1/span 3;
+    }
+
+    #biscotti {
+        grid-column: 1/span 2;
+        grid-row: 1/span 1;
+        margin: 0 auto;
+    }
+    #biscotti img {
+        min-width: 300px;
+    }
+    #cookies {
+        grid-column: 3/span 1;
+        grid-row: 1/span 1;
+    }
+    #brownies {
+        grid-column: 2/span 3;
+        grid-row: 2/span 1;
+    }
+    #brownies img {
+        width: 250px;
+    }
+
+    #crepe {
+        grid-column: 1/span 2;
+        grid-row: 1/span 3;
+    }
+    #crepe img {
+        width: auto;
+        height: 300px;
+    }
+
+    #shakshuka {
+        grid-column: 3/span 1;
+        grid-row: 2/span 2;
+    }
+
+    .cooking_images {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #four_images a img{
+        width: 175px;
+    }
+}
