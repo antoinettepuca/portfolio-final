@@ -250,7 +250,6 @@ label {
         padding-right: 5%;
     }
     .baking_images{
-        display: grid;
         grid-template-columns: repeat(2, auto);
         justify-content: space-around;
         align-items: center;
@@ -317,9 +316,6 @@ label {
     .cooking_images > img {
         margin: 0.5em 0;
     }
-
-
-
 }
 
 @media screen and (min-width: 900px){
@@ -340,11 +336,8 @@ label {
     }
 
     .baking_images{
-        display: grid;
         grid-template-columns: repeat(3, auto);
-        justify-content: space-around;
         align-items: start;
-        gap: 2%;
     }
 
     #orange_loaf{
